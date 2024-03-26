@@ -4,8 +4,11 @@ import { SafeAreaView, ScrollView, View, StatusBar, StyleSheet, Text} from 'reac
 
 import Title from './src/components/Layouts/Title.js'
 import Button from './src/components/Layouts/Button.js'
-import AddPatrimonio from './src/components/Layouts/AddPatrimonio.js';
-import AddSimulacao from './src/components/Layouts/AddSimulacao.js';
+import Simulacao from './src/components/Layouts/Simulacao.js'
+import Patrimonio from './src/components/Layouts/Patrimonio.js'
+import Addpatrimonio from './src/components/Navegation/Addpatrimonio.js';
+import LogoMarca from './src/components/Layouts/LogoMarca.js'
+
 
 export default function App() {
   const sigUser = () => {
@@ -26,7 +29,8 @@ export default function App() {
         <StatusBar backgroundColor="#000"/>
         
         <View style={styles.Title}>
-          <Title usuario={'Robertinho'} image={require('./Image/Logo-4.png')} cifrao={'R$ '} valor={'0,00'} />
+          <LogoMarca/>
+          <Title usuario={'Robertinho'} cifrao={'R$ '} valor={'14000,00'} />
         </View>
 
         <View style={styles.Section}>
@@ -54,20 +58,21 @@ export default function App() {
         </View>
 
         <Text style={styles.TitleAddPatrimonios}>Criar Simulação</Text> 
-        <AddSimulacao nameIcon={'plus'} sizeIcon={45}  colorIcon={'#000'}/>
+        <Simulacao nameIcon={'plus'} sizeIcon={45}  colorIcon={'#003E52'}/>
 
         
         <Text style={styles.TitleAddPatrimonios}>Adicionar Bens</Text>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <AddPatrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
-            <AddPatrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
-            <AddPatrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
-            <AddPatrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
-            <AddPatrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
-            <AddPatrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
-            <AddPatrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
+            <Patrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
+            <Patrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
+            <Patrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
+            <Patrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
+            <Patrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
+            <Patrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
+            <Patrimonio nameIcon={'home'} sizeIcon={70} colorIcon={'#fff'} onpress={sigHelp} TextIcon={'Imóvel'}/>
         </ScrollView>
 
+        <Addpatrimonio/>
 
       </ScrollView>
     </SafeAreaView>
