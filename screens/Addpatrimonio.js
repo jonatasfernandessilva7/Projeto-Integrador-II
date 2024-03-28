@@ -2,11 +2,9 @@ import React from 'react'
 
 import { SafeAreaView, ScrollView, View, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity} from 'react-native';
 
-import LogoMarca from '../Layouts/LogoMarca.js'
+import LogoMarca from '../src/components/Layouts/LogoMarca.js'
 
 export default function Addpatrimonio() {
-    const [number, onChangeNumber] = React.useState('');
-
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
