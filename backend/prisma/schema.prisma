@@ -15,7 +15,37 @@ model Usuario {
   email String  @unique
   nome  String?
   senha String
+  patrimonio Patrimonio[]
+}
+
+model Patrimonio {
+  id Int @id @default(autoincrement())
   bens Bens[]
+  direitos Direitos[]
+  obrigacoes Obrigacoes[]
+  usuarioId Int @unique
+  usuario Usuario @relation(fields: [usuarioId], references: [id])
+}
+
+model Bens {
+  id Int @id @default(autoincrement())
+  imoveis Imovel[]
+  terrenos Terreno[]
+  veiculos Veiculo[]
+  participacoes ParticipacoesSocietarias[]
+  outrosinvestimentos OutrosInvestimentos[]
+}
+
+model Direitos {
+  id Int @id @default(autoincrement())
+  valor Float
+  anoDeEntrada DateTime
+}
+
+model Obrigacoes {
+  id Int @id @default(autoincrement())
+  valor Float
+  anoDeEntrada DateTime
 }
 
 model Imovel {
@@ -25,8 +55,15 @@ model Imovel {
   valor Decimal
   anoDeCompra    DateTime
   depreciacao  Decimal
-  dono Usuario @relation(fields: [donoId], references: [id])
-  donoId Int
+}
+
+model Terreno {
+  id        Int     @id @default(autoincrement())
+  nome     String
+  descricao   String?
+  valor Decimal
+  anoDeCompra    DateTime
+  depreciacao  Decimal
 }
 
 model Veiculo {
@@ -36,8 +73,6 @@ model Veiculo {
   valor Decimal
   anoDeCompra    DateTime
   depreciacao  Decimal
-  dono Usuario @relation(fields: [donoId], references: [id])
-  donoId Int
 }
 
 model ParticipacoesSocietarias {
@@ -46,8 +81,6 @@ model ParticipacoesSocietarias {
   descricao   String?
   valor Decimal
   anoDeCompra    DateTime
-  dono Usuario @relation(fields: [donoId], references: [id])
-  donoId Int
 }
 
 model OutrosInvestimentos {
@@ -56,6 +89,4 @@ model OutrosInvestimentos {
   descricao   String?
   valor Decimal
   anoDeCompra    DateTime
-  dono Usuario @relation(fields: [donoId], references: [id])
-  donoId Int
 }
