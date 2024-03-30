@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:./dev.db"
 }
 
 model Usuario {
@@ -34,18 +34,24 @@ model Bens {
   veiculos Veiculo[]
   participacoes ParticipacoesSocietarias[]
   outrosinvestimentos OutrosInvestimentos[]
+  patrimonioId Int
+  compPatrimonio Patrimonio @relation(fields: [patrimonioId], references: [id])
 }
 
 model Direitos {
   id Int @id @default(autoincrement())
   valor Float
   anoDeEntrada DateTime
+  patrimonioId Int
+  compPatrimonio Patrimonio @relation(fields: [patrimonioId], references: [id])
 }
 
 model Obrigacoes {
   id Int @id @default(autoincrement())
   valor Float
   anoDeEntrada DateTime
+  patrimonioId Int
+  compPatrimonio Patrimonio @relation(fields: [patrimonioId], references: [id])
 }
 
 model Imovel {
@@ -55,6 +61,8 @@ model Imovel {
   valor Decimal
   anoDeCompra    DateTime
   depreciacao  Decimal
+  bemId Int
+  bem Bens @relation(fields: [bemId], references: [id])
 }
 
 model Terreno {
@@ -64,6 +72,8 @@ model Terreno {
   valor Decimal
   anoDeCompra    DateTime
   depreciacao  Decimal
+  bemId Int
+  bem Bens @relation(fields: [bemId], references: [id])
 }
 
 model Veiculo {
@@ -73,6 +83,8 @@ model Veiculo {
   valor Decimal
   anoDeCompra    DateTime
   depreciacao  Decimal
+  bemId Int
+  bem Bens @relation(fields: [bemId], references: [id])
 }
 
 model ParticipacoesSocietarias {
@@ -81,6 +93,8 @@ model ParticipacoesSocietarias {
   descricao   String?
   valor Decimal
   anoDeCompra    DateTime
+  bemId Int
+  bem Bens @relation(fields: [bemId], references: [id])
 }
 
 model OutrosInvestimentos {
@@ -89,4 +103,6 @@ model OutrosInvestimentos {
   descricao   String?
   valor Decimal
   anoDeCompra    DateTime
+  bemId Int
+  bem Bens @relation(fields: [bemId], references: [id])
 }
