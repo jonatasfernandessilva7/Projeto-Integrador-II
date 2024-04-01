@@ -2,8 +2,7 @@ import React from 'react'
 
 import { SafeAreaView, ScrollView, View, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity} from 'react-native';
 
-
-export default function Addpatrimonio({navigation}) {
+export default function Addsimulacao({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>

@@ -5,17 +5,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: "space-between",
-        marginTop: 50
+        marginTop: 80
       },
     titleText: {
       color: '#fff',
-      fontSize: 25,
+      fontSize: 20,
       fontWeight: 'bold',
       marginLeft: 10
     },
     titleNumber: {
       color: '#fff',
-      fontSize: 17,
+      fontSize: 16,
       fontWeight: 'bold',
       paddingHorizontal: 15,
       paddingVertical: 7,
@@ -45,8 +45,8 @@ const styles = StyleSheet.create({
     },
     TextIcon: {
       marginTop: 5,
-      fontSize: 19,
-      fontWeight: '600'
+      fontSize: 15,
+      fontWeight: '500'
     },
     Figure: {
       alignItems: 'center',
@@ -57,12 +57,12 @@ const styles = StyleSheet.create({
       elevation: 30
     },
     Logo:{
-      width: 80,
-      height: 80,
+      width: 90,
+      height: 90,
       borderRadius: 100
     },
     LogoTittle: {
-      fontSize: 20,
+      fontSize: 23,
       color: '#fff',
       fontWeight: '300'
     },

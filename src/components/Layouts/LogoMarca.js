@@ -1,7 +1,7 @@
 import { View, Text, Image} from 'react-native'
 import styles from './Style'
 
-export default function  Title(){
+export default function LogoMarca(){
     return(
         <View style={styles.Figure}>
             <Image style={styles.Logo} source={require('../../../Image/Logo-4.png')}/>
